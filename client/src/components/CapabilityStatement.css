@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap');
+
+.capability-page {
+  background: var(--bg-dark, #080c14);
+  min-height: 100vh;
+}
+
+.capability-section {
+  margin-bottom: 4rem;
+}
+
+.cap-section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #00e5ff;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cap-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.2em;
+  background: #00e5ff;
+  border-radius: 2px;
+}
+
+.cap-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #8892a4;
+  margin-bottom: 1rem;
+}
+
+.cap-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.cap-list li {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;
+  color: #8892a4;
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.cap-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #00e5ff;
+  font-size: 0.75rem;
+  top: 0.5rem;
+}
+
+/* TABLE */
+.cap-table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.cap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+}
+
+.cap-table thead {
+  background: rgba(0, 229, 255, 0.06);
+}
+
+.cap-table th {
+  padding: 0.85rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  color: #00e5ff;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.cap-table td {
+  padding: 0.8rem 1.25rem;
+  color: #8892a4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.cap-table td:first-child {
+  color: #f0f4ff;
+  font-weight: 600;
+  font-family: 'Syne', sans-serif;
+  white-space: nowrap;
+}
+
+.cap-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cap-table tbody tr:hover td {
+  background: rgba(0, 229, 255, 0.03);
+}
+
+.cap-badge {
+  display: inline-block;
+  background: rgba(0, 229, 255, 0.12);
+  color: #00e5ff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .cap-table th:nth-child(2),
+  .cap-table td:nth-child(2) { display: none; }
+}

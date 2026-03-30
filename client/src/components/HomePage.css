@@ -1,0 +1,440 @@
+/* ================================================
+   HOMEPAGE CSS — SOFTICK LLC
+   ================================================ */
+
+/* ---- HERO ---- */
+.home-hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+  overflow: hidden;
+  background: var(--bg-dark);
+  text-align: center;
+}
+
+.home-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(0,229,255,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(124,58,237,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.home-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(0,229,255,0.25);
+  border-radius: 100px;
+  background: rgba(0,229,255,0.05);
+  margin-bottom: 2rem;
+}
+
+.home-hero-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.8); }
+}
+
+.home-hero-heading {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.home-hero-heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.home-hero-sub {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.home-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---- STATS BAR ---- */
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: #0a1020;
+}
+
+.stat-item {
+  padding: 2rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s ease;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-item:hover {
+  background: rgba(0, 229, 255, 0.03);
+}
+
+.stat-number {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-label {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---- BENTO WRAPPER ---- */
+.home-bento {
+  padding: 6rem 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.bento-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.bento-section-header .section-label {
+  display: block;
+}
+
+/* ---- BENTO CARD BASE ---- */
+.bento-card {
+  background: #0d1525;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+  border-color: rgba(0, 229, 255, 0.28);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.bento-card.accent-bar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+/* ---- ABOUT BENTO GRID ---- */
+.bento-grid-about {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 5rem;
+}
+
+.bento-about-main {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.bento-about-main .bento-label {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.bento-about-main h2 {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.bento-about-main h2 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.bento-about-main p {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ---- PILLAR CARDS ---- */
+.bento-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bento-pillar-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.bento-pillar-title {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.bento-pillar-sub {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ---- SERVICES BENTO GRID ---- */
+.bento-grid-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+  gap: 1.25rem;
+}
+
+.bento-service {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.bento-service-featured {
+  background: linear-gradient(135deg, rgba(0,229,255,0.07) 0%, rgba(124,58,237,0.05) 100%);
+  border-color: rgba(0, 229, 255, 0.18);
+}
+
+.bento-service-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 229, 255, 0.07);
+  border: 1px solid rgba(0, 229, 255, 0.12);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.bento-service-title {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.bento-service-desc {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.bento-service.wide {
+  grid-column: span 2;
+}
+
+/* ---- SEE ALL CARD ---- */
+.bento-see-all-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  min-height: 180px;
+  border: 1px dashed rgba(0, 229, 255, 0.2) !important;
+  background: transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+.bento-see-all-card:hover {
+  background: rgba(0, 229, 255, 0.04) !important;
+  border-color: rgba(0, 229, 255, 0.4) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* ---- CTA SECTION ---- */
+.home-cta {
+  background: linear-gradient(135deg, #0d1a2e, #0a1628, #050d1a);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 4rem;
+  text-align: center;
+}
+
+.home-cta .about-text {
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+}
+
+.home-cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================================================
+   RESPONSIVE
+   ================================================ */
+
+/* Medium screens — stats go 2x2 */
+@media (max-width: 900px) {
+  .home-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-item:nth-child(1) { border-right: 1px solid var(--border); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3) {
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:nth-child(4) {
+    border-top: 1px solid var(--border);
+    border-right: none;
+  }
+
+  .bento-grid-about {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bento-about-main {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  .bento-grid-services {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bento-service.wide {
+    grid-column: span 1;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .home-hero {
+    padding: 0 1.5rem;
+    min-height: 75vh;
+  }
+  .home-bento {
+    padding: 4rem 1.5rem;
+  }
+  .home-cta {
+    padding: 4rem 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 580px) {
+  .home-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stat-item {
+    padding: 1.5rem 1rem;
+  }
+  .stat-number {
+    font-size: 2rem;
+  }
+  .bento-grid-about {
+    grid-template-columns: 1fr;
+  }
+  .bento-about-main {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .bento-grid-services {
+    grid-template-columns: 1fr;
+  }
+  .bento-service.wide {
+    grid-column: span 1;
+  }
+}
